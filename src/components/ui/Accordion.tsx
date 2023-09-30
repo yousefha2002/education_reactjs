@@ -19,7 +19,7 @@ import { useState } from "react"; // Import useState from React
             >
                     Do I have to be a certified teacher?
                 <span className="absolute inset-y-0 right-4 flex items-center">
-                {isOpen ? <IoIosArrowDown /> : <IoIosArrowUp />}
+                {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </span>
             </summary>
             <p className="px-4 py-6 pt-0 -mt-4 text-[15px] text-Gray">
