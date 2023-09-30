@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color:#f4f5f6;
+}
+
+*{
+    /* font-family: 'Cairo', sans-serif !important; */
+    font-family: 'Rubik', sans-serif !important;
+}
+
+.Container{
+    @apply container px-2 xl:px-6 mx-auto
+}
+
+.Button{
+    @apply px-4 py-1 rounded-[4px]
+}
+
+.Title{
+    @apply text-[28px] mb-12 text-center font-[500]
+}
