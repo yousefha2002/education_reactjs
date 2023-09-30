@@ -16,7 +16,7 @@ const AdminSidebarBox  = ({ isOpen, onClose }:props) => {
             icon:AiFillHome
         },
         {
-            id:1,
+            id:2,
             title:"Study Levels",
             url:"/admin/levels",
             icon:RiGraduationCapFill
