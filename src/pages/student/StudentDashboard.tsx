@@ -1,9 +1,15 @@
 import React from 'react'
-import Layout from '../../components/student/Layout'
+import student_menu from '../../utils/student_menu'
+import MenuBox from '../../components/student/MenuBox'
 
 export default function StudentDashboard() {
     return (
-        <Layout>
-        </Layout>
+        <div className='OuterDiv'>
+            <div className='InnerDiv grid grid-cols-4 gap-4'>
+                {
+                    student_menu.map(item=><MenuBox item={item}/>)
+                }
+            </div>
+        </div>
     )
-}
+    }

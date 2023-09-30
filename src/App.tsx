@@ -11,6 +11,7 @@ import ProfilePicture from "./pages/teacher/steppers/ProfilePicture";
 import AddAvailable from "./pages/teacher/steppers/AddAvailable";
 import Description from "./pages/teacher/steppers/Description";
 import StudentDashboard from "./pages/student/StudentDashboard";
+import StudentImage from "./pages/student/StudentImage";
 
 const queryClient = new QueryClient()
 
@@ -31,6 +32,7 @@ function App() {
 
         {/** student pages */}
         <Route path="student/dashboard" element={<StudentDashboard/>}/>
+        <Route path="student/photo" element={<StudentImage/>}/>
         </Routes>
         <Footer/>
     </QueryClientProvider>

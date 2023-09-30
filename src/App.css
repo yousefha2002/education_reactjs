@@ -22,3 +22,11 @@ body{
 .Title{
     @apply text-[28px] mb-12 text-center font-[500]
 }
+
+.OuterDiv{
+    @apply Container min-h-[75vh] mt-10
+}
+
+.InnerDiv{
+    @apply bg-white shadow p-6
+}
