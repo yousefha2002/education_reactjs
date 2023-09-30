@@ -1,6 +1,6 @@
 import "./App.css";
 import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/nav/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
@@ -11,13 +11,18 @@ import ProfilePicture from "./pages/teacher/steppers/ProfilePicture";
 import AddAvailable from "./pages/teacher/steppers/AddAvailable";
 import Description from "./pages/teacher/steppers/Description";
 import StudentDashboard from "./pages/student/StudentDashboard";
+import ControlBoard from "./pages/admin/ControlBoard";
+import AdminLevels from "./pages/admin/AdminLevels";
 
 const queryClient = new QueryClient()
 
 function App() {
+  const location = useLocation();
+  const isNotAdminPage = !location.pathname.startsWith("/admin");
+
   return (
     <QueryClientProvider client={queryClient}>
-        <Navbar/>
+        {isNotAdminPage && <Navbar/>}
         <Routes>
           <Route path="" element={<Home/>}/>
           <Route path="select-tutor/subject/:id" element={<Tutors/>}/>
@@ -31,8 +36,12 @@ function App() {
 
         {/** student pages */}
         <Route path="student/dashboard" element={<StudentDashboard/>}/>
+
+        {/* admin pages */}
+        <Route path="/admin" element={<ControlBoard/>}/>
+        <Route path="/admin/levels" element={<AdminLevels/>}/>
         </Routes>
-        <Footer/>
+        {isNotAdminPage && <Footer/>}
     </QueryClientProvider>
   );
 }
