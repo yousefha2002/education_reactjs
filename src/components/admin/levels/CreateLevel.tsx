@@ -3,11 +3,9 @@ import { IFormLevel } from '../../../types/forms/LevelForm';
 import CustomInput from '../../ui/CustomInput';
 import { motion } from "framer-motion"
 
-
 type props = {
     handleClose:()=>void,
 }
-
 
 export default function CreateLevel({handleClose}:props) {
     const { handleSubmit, control,register, formState: { errors },} = useForm<IFormLevel>({

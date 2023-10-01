@@ -14,6 +14,7 @@ import StudentDashboard from "./pages/student/StudentDashboard";
 import StudentImage from "./pages/student/StudentImage";
 import ControlBoard from "./pages/admin/ControlBoard";
 import AdminLevels from "./pages/admin/AdminLevels";
+import StudentProfile from "./pages/student/StudentProfile";
 
 const queryClient = new QueryClient()
 
@@ -38,6 +39,7 @@ function App() {
         {/** student pages */}
         <Route path="student/dashboard" element={<StudentDashboard/>}/>
         <Route path="student/photo" element={<StudentImage/>}/>
+        <Route path="student/profile" element={<StudentProfile/>}/>
 
         {/* admin pages */}
         <Route path="/admin" element={<ControlBoard/>}/>

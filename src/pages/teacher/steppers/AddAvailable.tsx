@@ -3,6 +3,7 @@ import { IFormAvailable } from "../../../types/forms/IFormAvailable";
 import CustomInput from "../../../components/ui/CustomInput";
 import { BsTrashFill } from 'react-icons/bs';
 import Steps from "../../../components/teacher/Steps";
+import CustomSelect from "../../../components/ui/CustomSelect";
 
 export default function AddAvailable() {
 const {
@@ -38,16 +39,17 @@ const {
                     {
                         return(
                             <div key={field.id} className='my-6 flex items-start gap-x-4'>
-                            <select
-                                {...register(`days.${index}.day`, { required: true })}
-                                className='bg-gray-50 border max-h-[100px] border-Border text-gray-900 text-md duration-300 rounded-[2px] outline-none focus:ring-Primary focus:border-Primary block w-full p-2'
-                            >
-                                {[1, 2, 3, 4, 5].map((item) => (
-                                <option className=' capitalize' key={item} value={item}>
-                                    {item}
-                                </option>
-                                ))}
-                            </select>
+                            <CustomSelect
+                            name={`days.${index}.day`}
+                            register={register}
+                            options={[
+                                { title: "Monday", id: "1" },
+                                { title: "Tuesday", id: "2" },
+                            ]}
+                            defaultValue={"2"}
+                            getDisplayValue={(item) => item.title} // Use item.title for objects with a title property
+                            getValue={(item) => item.id}
+                            />
                             <CustomInput
                                 name={`days.${index}.time`}
                                 control={control}
