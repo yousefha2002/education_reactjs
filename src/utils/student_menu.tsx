@@ -7,12 +7,12 @@ import picture from '../images/student/pictures.png'
 export default [ 
     {
         title:"Today Classes",
-        link:"student/myclass?show=today",
+        link:"student/myclasses?show=today",
         icon:todayClass
     },
     {
         title:"All Classes",
-        link:"student/myclass",
+        link:"student/myclasses",
         icon:allclasses
     },
     {

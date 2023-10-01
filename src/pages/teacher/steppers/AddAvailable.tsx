@@ -39,23 +39,23 @@ const {
                     {
                         return(
                             <div key={field.id} className='my-6 flex items-start gap-x-4'>
-                            <CustomSelect
-                            name={`days.${index}.day`}
-                            register={register}
-                            options={[
-                                { title: "Monday", id: "1" },
-                                { title: "Tuesday", id: "2" },
-                            ]}
-                            defaultValue={"2"}
-                            getDisplayValue={(item) => item.title} // Use item.title for objects with a title property
-                            getValue={(item) => item.id}
-                            />
-                            <CustomInput
-                                name={`days.${index}.time`}
-                                control={control}
-                                type="time"
-                                defaultValue={''}
-                            />
+                                <CustomSelect
+                                    name={`days.${index}.day`}
+                                    register={register}
+                                    options={[
+                                        { title: "Monday", id: "1" },
+                                        { title: "Tuesday", id: "2" },
+                                    ]}
+                                    defaultValue={"2"}
+                                    getDisplayValue={(item) => item.title}
+                                    getValue={(item) => item.id}
+                                />
+                                <CustomInput
+                                    name={`days.${index}.time`}
+                                    control={control}
+                                    type="time"
+                                    defaultValue={''}
+                                />
                             <button className="py-2 text-secondary" onClick={() => remove(index)}><BsTrashFill/></button>
                         </div>
                         )
