@@ -15,6 +15,10 @@ import StudentImage from "./pages/student/StudentImage";
 import ControlBoard from "./pages/admin/ControlBoard";
 import AdminLevels from "./pages/admin/AdminLevels";
 import StudentProfile from "./pages/student/StudentProfile";
+import AdminSubjects from "./pages/admin/AdminSubjects";
+import TeachersToApprove from "./pages/admin/TeachersToApprove";
+import TeachersViewAdmin from "./pages/admin/TeachersViewAdmin";
+import AdminViewStudents from "./pages/admin/AdminViewStudents";
 
 const queryClient = new QueryClient()
 
@@ -44,6 +48,10 @@ function App() {
         {/* admin pages */}
         <Route path="/admin" element={<ControlBoard/>}/>
         <Route path="/admin/levels" element={<AdminLevels/>}/>
+        <Route path="/admin/subjects" element={<AdminSubjects/>}/>
+        <Route path="/admin/teachers" element={<TeachersViewAdmin/>}/>
+        <Route path="/admin/teachers/approve" element={<TeachersToApprove/>}/>
+        <Route path="/admin/students" element={<AdminViewStudents/>}/>
         </Routes>
         {isNotAdminPage && <Footer/>}
         
