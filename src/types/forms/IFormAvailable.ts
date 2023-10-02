@@ -1,6 +1,7 @@
 export type IFormAvailable = {
     days:{
-        time:string,
+        startTime:string,
+        endTime:string,
         day:string
     }[]
 }

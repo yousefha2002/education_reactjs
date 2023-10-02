@@ -12,7 +12,7 @@ export default function Availability() {
             <Line/>
             <div className='my-2'>
                 <h3 className='mb-1'><span className='text-secondary font-[600]'>Subject</span> : Science</h3>
-                <h3><span className='text-secondary font-[600]'>Number of classes per week</span> : 2</h3>
+                <h3><span className='text-secondary font-[600]'>Price per hour</span> : 10$</h3>
             </div>
             <p className='mb-2'>
             After choosing the class times for the week, the system will automatically record the same times for the following weeks

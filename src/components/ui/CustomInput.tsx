@@ -21,6 +21,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
             defaultValue={defaultValue || ''}
             render={({ field }) => (
                 <input
+                min={0}
                 type={type}
                 placeholder={placeholder} // Use label as placeholder by default
                 {...field}

@@ -12,7 +12,7 @@ const {
     register,
     } = useForm<IFormAvailable>({
         defaultValues: {
-        days:[{day:"1",time:"08:26"}]
+        days:[{day:"1",startTime:"08:00",endTime:"09:00"}]
         },
     });
 
@@ -30,15 +30,19 @@ const {
             onClick={() =>
                     append({
                     day: "1",
-                    time: "08:26"
+                    startTime: "08:00",
+                    endTime: "09:00"
                     })
                 }>Add Available time</button>
+            <h3 className="mb-2 mt-4 text-[15px] text-Gray">
+                * Please choose days that you will be available and specify the start and end hours of classes .
+            </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {
                     fields.map((field,index)=>
                     {
                         return(
-                            <div key={field.id} className='my-6 flex items-start gap-x-4'>
+                            <div key={field.id} className='my-6 flex items-start gap-x-4 flex-wrap md:flex-nowrap gap-y-3'>
                                 <CustomSelect
                                     name={`days.${index}.day`}
                                     register={register}
@@ -51,7 +55,13 @@ const {
                                     getValue={(item) => item.id}
                                 />
                                 <CustomInput
-                                    name={`days.${index}.time`}
+                                    name={`days.${index}.startTime`}
+                                    control={control}
+                                    type="time"
+                                    defaultValue={''}
+                                />
+                                <CustomInput
+                                    name={`days.${index}.endTime`}
                                     control={control}
                                     type="time"
                                     defaultValue={''}

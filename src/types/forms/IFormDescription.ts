@@ -1,3 +1,5 @@
 export type IFormDescription = {
-    description:""
+    description:string,
+    price:number,
+    timeZone:string
 }
