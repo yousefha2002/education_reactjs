@@ -24,9 +24,9 @@ export default function Table<T extends { id: number }>({ columns, data,renderBu
                                 </th>
                             );
                         })}
-                        <th scope="col" className="px-6 py-3">
+                        {renderButtons&&<th scope="col" className="px-6 py-3">
                             Actions
-                        </th>
+                        </th>}
                     </tr>
                 </thead>
                 <tbody>

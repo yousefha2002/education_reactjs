@@ -1,10 +1,9 @@
 import { useForm ,SubmitHandler} from 'react-hook-form';
-import { IFormProfile } from '../../types/forms/IFormProfile';
 import CustomInput from '../../components/ui/CustomInput';
 import { IFormSettings } from '../../types/forms/IFormSettings';
 
-export default function StudentSettings() {
-    const { handleSubmit, control,register, formState: { errors },} = useForm<IFormSettings>({
+export default function Settings() {
+    const { handleSubmit, control, formState: { errors },} = useForm<IFormSettings>({
         defaultValues: {
             oldPassword:"",
             newPassword:"",

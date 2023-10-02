@@ -15,8 +15,14 @@ import StudentImage from "./pages/student/StudentImage";
 import ControlBoard from "./pages/admin/ControlBoard";
 import AdminLevels from "./pages/admin/AdminLevels";
 import StudentProfile from "./pages/student/StudentProfile";
-import StudentSettings from "./pages/student/StudentSettings";
 import StudentClasses from "./pages/student/StudentClasses";
+import StudentFinancial from "./pages/student/StudentFinancial";
+import TeacherDashboard from "./pages/teacher/TeacherDashboard";
+import Settings from "./pages/teacherStudent/Settings";
+import TeacherClasses from "./pages/teacher/TeacherClasses";
+import TeacherFinancial from "./pages/teacher/TeacherFinancial";
+import StudentSignup from "./pages/student/StudentSignup";
+import TeacherSignup from "./pages/teacher/TeacherSignup";
 
 const queryClient = new QueryClient()
 
@@ -32,22 +38,31 @@ function App() {
           <Route path="select-tutor/subject/:id" element={<Tutors/>}/>
           <Route path="tutor/:id" element={<SingleTutor/>}/>
 
+          {/** student & teacher pages */}
+          <Route path="settings" element={<Settings/>}/>
+
           {/** teacher pages */}
           <Route path="teacher/signup/step1" element={<SelectSubject/>}/>
           <Route path="teacher/signup/step2" element={<ProfilePicture/>}/>
           <Route path="teacher/signup/step3" element={<Description/>}/>
           <Route path="teacher/signup/step4" element={<AddAvailable/>}/>
+          <Route path="teacher/dashboard" element={<TeacherDashboard/>}/>
+          <Route path="teacher/myClasses" element={<TeacherClasses/>}/>
+          <Route path="teacher/financial" element={<TeacherFinancial/>}/>
+          <Route path="teacher/signup" element={<TeacherSignup/>}/>
 
-        {/** student pages */}
-        <Route path="student/dashboard" element={<StudentDashboard/>}/>
-        <Route path="student/photo" element={<StudentImage/>}/>
-        <Route path="student/profile" element={<StudentProfile/>}/>
-        <Route path="student/settings" element={<StudentSettings/>}/>
-        <Route path="student/myClasses" element={<StudentClasses/>}/>
 
-        {/* admin pages */}
-        <Route path="/admin" element={<ControlBoard/>}/>
-        <Route path="/admin/levels" element={<AdminLevels/>}/>
+          {/** student pages */}
+          <Route path="student/dashboard" element={<StudentDashboard/>}/>
+          <Route path="student/photo" element={<StudentImage/>}/>
+          <Route path="student/profile" element={<StudentProfile/>}/>
+          <Route path="student/myClasses" element={<StudentClasses/>}/>
+          <Route path="student/financial" element={<StudentFinancial/>}/>
+          <Route path="student/signup" element={<StudentSignup/>}/>
+
+          {/* admin pages */}
+          <Route path="/admin" element={<ControlBoard/>}/>
+          <Route path="/admin/levels" element={<AdminLevels/>}/>
         </Routes>
         {isNotAdminPage && <Footer/>}
         

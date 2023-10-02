@@ -6,7 +6,7 @@ type Lesson = {
     day:string,
     date:string,
     time:string,
-    tutor:string
+    student:string
 }
 
 const data:Lesson[] = []
@@ -16,10 +16,10 @@ const columns: TableColumn<Lesson>[] = [
     { header: 'Day', accessor: "day" },
     {header:"Date" , accessor:"date"},
     {header:"Time" , accessor:"time"},
-    {header:"Tutor" , accessor:"tutor"}
+    {header:"Student" , accessor:"student"}
 ];
 
-export default function StudentClasses() {
+export default function TeacherClasses() {
     return (
         <div className='OuterDiv'>
             <div className='InnerDiv'>

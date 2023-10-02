@@ -22,7 +22,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
             render={({ field }) => (
                 <input
                 type={type}
-                placeholder={placeholder || label} // Use label as placeholder by default
+                placeholder={placeholder} // Use label as placeholder by default
                 {...field}
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-md duration-300 rounded-[2px] outline-none focus:ring-main focus:border-main block w-full py-1 px-2'
                 />

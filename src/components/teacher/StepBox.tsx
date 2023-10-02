@@ -18,11 +18,12 @@ export default function StepBox({step,activeStep}:props) {
                     }`}
                 >
                     <span
-                    className={`absolute -bottom-[1.75rem] left-1/2 p-1 -translate-x-1/2 rounded-full ${
+                    className={`absolute -bottom-[2.2rem] w-[35px] flex justify-center items-center
+                    h-[35px] left-1/2 p-1 -translate-x-1/2 rounded-full font-[400] text-[18px] ${
                         step.id === activeStep ? 'bg-main' : 'bg-gray-600'
                     } text-white`}
                     >
-                    <AiOutlineCheck className="text-[16px]"/>
+                    {step.id}
                     </span>
 
                     <span className={`hidden sm:block ${step.id === activeStep ? 'text-main' : 'text-Gray'}`}>
