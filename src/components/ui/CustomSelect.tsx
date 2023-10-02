@@ -23,5 +23,5 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         </select>
         );
     };
-  
+
 export default CustomSelect;

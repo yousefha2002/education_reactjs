@@ -9,21 +9,20 @@ import UpdateBox from '../../components/admin/UpdateBox';
 export type TableColumn<T> = {
     header: string;
     accessor: keyof T;
-  }
-  
-  type Level = {
+  }    
+type Level = {
     id:number,
     titleAr:string,
     titleEn:string
-  }
-  
-  const data:Level[] = [{id:1,titleAr:"ابتدائي",titleEn:"Elementry"},{id:2,titleAr:"ثانوى",titleEn:"Secondry"}]
-  
-  const columns: TableColumn<Level>[] = [
-      { header: 'ID', accessor: 'id' },
-      { header: 'Arabic Title', accessor: "titleAr" },
-      {header:"English Title" , accessor:"titleEn"}
-  ];
+}
+    
+const data:Level[] = [{id:1,titleAr:"ابتدائي",titleEn:"Elementry"},{id:2,titleAr:"ثانوى",titleEn:"Secondry"}]
+    
+const columns: TableColumn<Level>[] = [
+    { header: 'ID', accessor: 'id' },
+    { header: 'Arabic Title', accessor: "titleAr" },
+    {header:"English Title" , accessor:"titleEn"}
+];
 
 function AdminLevels() {
 
@@ -74,9 +73,9 @@ function AdminLevels() {
         handleClose={handleUpdateClose} titleAr={updatedLevel.titleAr} titleEn={updatedLevel.titleEn}/></Modal>}
         <CreateButton handleOpen={handleOpen}/>
         <Table
-         data={data}
-         columns={columns}
-         renderButtons={renderButtons}
+            data={data}
+            columns={columns}
+            renderButtons={renderButtons}
         />
     </AdminLayout>
   )

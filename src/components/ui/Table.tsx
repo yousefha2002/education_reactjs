@@ -8,7 +8,7 @@ export type TableColumn<T> = {
 interface TableProps<T> {
     data: T[];
     columns: TableColumn<T>[];
-    renderButtons: (id: number) => React.ReactNode;
+    renderButtons?: (id: number) => React.ReactNode;
 }
 
 export default function Table<T extends { id: number }>({ columns, data,renderButtons }: TableProps<T>) {
@@ -41,7 +41,7 @@ export default function Table<T extends { id: number }>({ columns, data,renderBu
                                 </td>
                             ))}
                             <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {renderButtons(item.id)}
+                                {renderButtons&&renderButtons(item.id)}
                             </td>
                         </tr>
                     ))}
