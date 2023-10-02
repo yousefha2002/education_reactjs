@@ -1,3 +1,5 @@
+Education platform enabling students to book lessons with teachers based on the teachers' available schedules. Developed features for seamless scheduling and interaction between students and teachers, enhancing the learning experience
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

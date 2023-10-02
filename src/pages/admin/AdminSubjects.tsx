@@ -9,22 +9,23 @@ import UpdateBox from '../../components/admin/UpdateBox';
 export type TableColumn<T> = {
     header: string;
     accessor: keyof T;
-  }    
-type Level = {
+  }
+  
+  type Subject = {
     id:number,
     titleAr:string,
     titleEn:string
-}
-    
-const data:Level[] = [{id:1,titleAr:"ابتدائي",titleEn:"Elementry"},{id:2,titleAr:"ثانوى",titleEn:"Secondry"}]
-    
-const columns: TableColumn<Level>[] = [
-    { header: 'ID', accessor: 'id' },
-    { header: 'Arabic Title', accessor: "titleAr" },
-    {header:"English Title" , accessor:"titleEn"}
-];
+  }
+  
+  const data:Subject[] = [{id:1,titleAr:"رياضيات",titleEn:"Math"},{id:2,titleAr:"إنجليزي",titleEn:"English"}]
+  
+  const columns: TableColumn<Subject>[] = [
+      { header: 'ID', accessor: 'id' },
+      { header: 'Arabic Title', accessor: "titleAr" },
+      {header:"English Title" , accessor:"titleEn"}
+  ];
 
-function AdminLevels() {
+function AdminSubjects() {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -50,13 +51,13 @@ function AdminLevels() {
         setShowUpdateModal(p=>true)
     }
 
-    const [updatedLevel, setUpdatedLevel] = useState<Level>({}as Level);
+    const [updatedSubject, setUpdatedSubject] = useState<Subject>({}as Subject);
 
     const renderButtons = (id:number) => {
         function handleUpdate(){
             const level  = data.find(le=>le.id===id);
             if(level){
-                setUpdatedLevel(pre=>level);
+                setUpdatedSubject(pre=>level);
                 handleUpdateOpen();
             }
         }
@@ -68,17 +69,17 @@ function AdminLevels() {
 
   return (
     <AdminLayout>
-        {showModal&&<Modal handleClose={handleClose} title='Add New Level'><CreateBox handleClose={handleClose}/></Modal>}
-        {showUpdateModal&&<Modal handleClose={handleUpdateClose} title='Update Level'><UpdateBox url='api url here for updae level'
-        handleClose={handleUpdateClose} titleAr={updatedLevel.titleAr} titleEn={updatedLevel.titleEn}/></Modal>}
+        {showModal&&<Modal handleClose={handleClose} title='Add New Subject'><CreateBox handleClose={handleClose}/></Modal>}
+        {showUpdateModal&&<Modal handleClose={handleUpdateClose} title='Update Subject'><UpdateBox url='api url here for updae level'
+        handleClose={handleUpdateClose} titleAr={updatedSubject.titleAr} titleEn={updatedSubject.titleEn}/></Modal>}
         <CreateButton handleOpen={handleOpen}/>
         <Table
-            data={data}
-            columns={columns}
-            renderButtons={renderButtons}
+         data={data}
+         columns={columns}
+         renderButtons={renderButtons}
         />
     </AdminLayout>
   )
 }
 
-export default AdminLevels
+export default AdminSubjects

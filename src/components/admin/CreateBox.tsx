@@ -1,21 +1,17 @@
 import { useForm ,SubmitHandler} from 'react-hook-form';
-import { IFormLevel } from '../../../types/forms/LevelForm';
-import CustomInput from '../../ui/CustomInput';
+import { IFormLevel } from '../../types/forms/LevelForm';
+import CustomInput from '../ui/CustomInput';
 import { motion } from "framer-motion"
-
 
 type props = {
     handleClose:()=>void,
-    titleAr:string,
-    titleEn:string
 }
 
-
-export default function UpdateLevel({handleClose,titleAr,titleEn}:props) {
+export default function CreateBox({handleClose}:props) {
     const { handleSubmit, control,register, formState: { errors },} = useForm<IFormLevel>({
         defaultValues: {
-            titleAr:titleAr,
-            titleEn:titleEn
+            titleAr:"",
+            titleEn:""
         },
     });
 
@@ -40,7 +36,7 @@ export default function UpdateLevel({handleClose,titleAr,titleEn}:props) {
                 <motion.button 
                 whileHover={{scale:0.98}} whileTap={{scale:1.08}}
                 className='Button text-white bg-main mt-3' type='submit'>
-                    Save
+                    Create
                 </motion.button>
             </form>
     )

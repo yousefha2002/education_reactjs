@@ -1,5 +1,8 @@
 import { AiOutlineClose ,AiFillHome} from 'react-icons/ai';
 import {RiGraduationCapFill} from 'react-icons/ri'
+import {MdOutlineSubject ,MdBeenhere} from 'react-icons/md'
+import {GiTeacher} from 'react-icons/gi'
+import {PiStudentBold} from 'react-icons/pi'
 import { Link } from 'react-router-dom';
 
 type props = {
@@ -20,6 +23,30 @@ const AdminSidebarBox  = ({ isOpen, onClose }:props) => {
             title:"Study Levels",
             url:"/admin/levels",
             icon:RiGraduationCapFill
+        },
+        {
+            id:3,
+            title:"Subjects",
+            url:"/admin/subjects",
+            icon:MdOutlineSubject
+        },
+        {
+            id:5,
+            title:"Teachers",
+            url:"/admin/teachers",
+            icon:GiTeacher
+        },
+        {
+            id:4,
+            title:"Teachers To Approve",
+            url:"/admin/teachers/approve",
+            icon:MdBeenhere
+        },
+        {
+            id:6,
+            title:"Students",
+            url:"/admin/students",
+            icon:PiStudentBold
         }
     ]
     return (
